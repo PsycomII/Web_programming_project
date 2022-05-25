@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Capital cities of EU</title>
+</head>
+<body>
+    <h2>Capital cities of Europe</h2>
+    <div class = capital id="capital">
+        <div id=paris>
+            <h1>Paris</h1>
+            <img class="img" src="paris.jpg">
+            <p>Description</p>
+            <button id="delete" hidden>Delete</button>
+        </div>
+        <div id="madrid">
+            <h1>Madrid</h1>
+            <img class="img" src="madrid.jpg">
+            <p>Description</p>
+            <button id="delete" hidden>Delete</button>
+
+        </div>
+        <div id="berlin">
+            <h1>Berlin</h1>
+            <img class="img" src="berlin.jpg">
+            <p>Description</p>
+            <button id="delete" hidden>Delete</button>
+
+        </div>
+        <div id="lisbon">
+            <h1>Lisbon</h1>
+            <img class="img" src="lisbonne.jpg">
+            <p>Description</p>
+            <button id="delete" hidden>Delete</button>
+
+        </div>
+        <div id="rome">
+            <h1>Rome</h1>
+            <img class="img" src="rome.jpg">
+            <p>Description</p>
+        </div>
+
+    </div>
+    <div class = edit>
+        <button type = "button" id = "butto" onclick="">Add a capital</button>
+        <button type= "button" id = "editt" onclick= "myFunction()">Delete a capital</button>
+    </div>
+    
+    <script type="text/javascript" src="scripts.js"></script>
+    <script>
+        function remove_capital(){
+            document.getElementsById("delete").removeAttribute("hidden");
+        
+        }
+    </script>
+    <script>
+        function myFunction() {
+            let capital = prompt("Please enter the name of the capital", "Paris");
+           if (capital != null) {
+             document.getElementById(person).remove(person);
+           }
+         }
+
+    </script>
+        
+</body>
+</html>
