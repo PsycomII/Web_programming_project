@@ -6,39 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    
     <title>Capital cities of EU</title>
 </head>
 <body>
     <h2>Capital cities of Europe</h2>
     <div class = capital id="capital">
-        <div id=paris>
+
+        <div id=paris class="City">
             <h1>Paris</h1>
             <img class="img" src="paris.jpg">
             <p>Description</p>
-            <button id="delete" hidden>Delete</button>
         </div>
-        <div id="madrid">
+
+        <div id="madrid" class="City">
             <h1>Madrid</h1>
             <img class="img" src="madrid.jpg">
             <p>Description</p>
-            <button id="delete" hidden>Delete</button>
-
         </div>
-        <div id="berlin">
+
+        <div id="berlin" class="City">
             <h1>Berlin</h1>
             <img class="img" src="berlin.jpg">
             <p>Description</p>
-            <button id="delete" hidden>Delete</button>
-
         </div>
-        <div id="lisbon">
+
+        <div id="lisbon" class="City">
             <h1>Lisbon</h1>
             <img class="img" src="lisbonne.jpg">
             <p>Description</p>
-            <button id="delete" hidden>Delete</button>
-
         </div>
-        <div id="rome">
+
+        <div id="rome" class="City">
             <h1>Rome</h1>
             <img class="img" src="rome.jpg">
             <p>Description</p>
@@ -46,26 +45,27 @@
 
     </div>
     <div class = edit>
-        <button type = "button" id = "butto" onclick="">Add a capital</button>
-        <button type= "button" id = "editt" onclick= "myFunction()">Delete a capital</button>
+        <button type = "button" id = "butto" onclick="show_form()">Add a capital</button>
+        <button type= "button" id = "editt" onclick= "remove_capital()">Delete a capital</button>
     </div>
-    
-    <script type="text/javascript" src="scripts.js"></script>
-    <script>
-        function remove_capital(){
-            document.getElementsById("delete").removeAttribute("hidden");
-        
-        }
-    </script>
-    <script>
-        function myFunction() {
-            let capital = prompt("Please enter the name of the capital", "Paris");
-           if (capital != null) {
-             document.getElementById(person).remove(person);
-           }
-         }
 
-    </script>
-        
+    <div id="form" class="container" hidden>
+        <form id = "add_capital" class = "form-container">
+            <legend> Add a Capital </legend>
+            <label for="capital">Capital Name:</label><br>
+            <input id = "capital_add" type="text" placeholder="Enter the capital name" name="name" required><br>
+
+            <label for = "photo">Choose your image:</label><br>
+            <input type="file" id="image_input" accept="image/jpeg, image/png, image/jpg"><br>
+
+
+            <label for="description">Description:</label><br>
+            <input id = "capital_description" type="textarea" placeholder="Enter a description" name="desc" required><br>
+
+            <button type="button" onclick="add_capital()" id="add">Add</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="scripts.js" defer></script>
+            
 </body>
 </html>
