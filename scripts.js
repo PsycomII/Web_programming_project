@@ -1,3 +1,4 @@
+var imgURL;
 
 function remove_capital() {
     let capital = prompt("Please enter the name of the capital", "exemple: paris");
@@ -11,7 +12,6 @@ function remove_capital() {
     document.getElementById("form").removeAttribute("hidden");
      
  }
-
 
 
 
@@ -38,17 +38,15 @@ function remove_capital() {
 
  function add_img(){
    var newcapital = document.getElementById("capital_add").value;
-   var newImage = document.getElementById("image_input").files[0].name;
+   //var newImage = document.getElementById("image_input").files[0].name;
    var newimg = document.createElement("img");
-   newimg.src = newImage;
+  // newimg.src = newImage;
    newimg.setAttribute("class","img");
+   newimg.setAttribute("id", "newimg_" + newcapital)
 
    var element = document.getElementById(newcapital);
    element.appendChild(newimg);
    
-
-
-
  }
 
  function addp(){
@@ -63,12 +61,20 @@ function remove_capital() {
 
  }
 
+ function load_image(){
+  var newcapital = document.getElementById("capital_add").value;
+  //newcapital = newcapital.charAt(0).toUpperCase() + newcapital.slice(1).toLowerCase();
+  var img = document.getElementById("newimg_" + newcapital);
+  img.src = window.imgURL;
+ }
+
  async function add_capital(){
   add_div();
   await new Promise((resolve,reject)=> setTimeout(resolve,1000));
   add_h1();
   add_img();
+  await new Promise((resolve,reject)=> setTimeout(resolve,1000));
+  load_image();
   addp();
-  close_form();
   
  }
